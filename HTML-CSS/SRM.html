@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRM Smart Campus Navigator</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f4ff;
+    color: #25264b;
+}
+
+header {
+    background: linear-gradient(120deg,#25266d,#6554c0);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 13px;
+    opacity: .9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.welcome h2 {
+    color: #4942a0;
+    margin-bottom: 8px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #dedcf7;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 15px;
+    outline: none;
+}
+
+.section-title {
+    margin: 20px 0 15px;
+    color: #343477;
+}
+
+.places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+}
+
+.place-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px #00000010;
+    transition: .3s;
+}
+
+.place-card:hover {
+    transform: translateY(-4px);
+}
+
+.place-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.place-card h3 {
+    margin-bottom: 8px;
+    color: #46409b;
+}
+
+.place-card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #554bc0;
+    border: none;
+    padding: 11px 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #37318e;
+}
+
+.map-section {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.map-section h2 {
+    margin-bottom: 12px;
+    color: #46409b;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 12px;
+}
+
+footer {
+    background: #25266d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.no-results {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 SRM SMART CAMPUS NAVIGATOR</h1>
+    <p>SRM Institute of Science and Technology | Kattankulathur</p>
+</header>
+
+<div class="container">
+
+    <div class="welcome">
+        <h2>Welcome to SRM Campus!</h2>
+        <p>Find important locations and navigate around the SRM KTR campus easily.</p>
+    </div>
+
+    <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="🔍 Search campus locations..."
+        onkeyup="searchPlaces()"
+    >
+
+    <h2 class="section-title">📍 Campus Locations</h2>
+
+    <div class="places" id="places">
+
+        <div class="place-card" data-name="arch gate">
+            <div class="place-icon">🚪</div>
+            <h3>SRM Arch Gate</h3>
+            <p>Main entrance of SRM University.</p>
+            <button onclick="navigate('SRM Arch Gate Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="university library">
+            <div class="place-icon">📚</div>
+            <h3>University Library</h3>
+            <p>Central library for students and research.</p>
+            <button onclick="navigate('SRM University Library Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="tech park 1">
+            <div class="place-icon">🏢</div>
+            <h3>Tech Park 1</h3>
+            <p>Academic and technology facilities.</p>
+            <button onclick="navigate('SRM Tech Park 1 Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="tech park 2">
+            <div class="place-icon">💻</div>
+            <h3>Tech Park 2</h3>
+            <p>Technology and academic building.</p>
+            <button onclick="navigate('SRM Tech Park 2 Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="global hospital">
+            <div class="place-icon">🏥</div>
+            <h3>SRM Global Hospital</h3>
+            <p>Healthcare and medical facilities.</p>
+            <button onclick="navigate('SRM Global Hospital Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="n block girls hostel">
+            <div class="place-icon">🏠</div>
+            <h3>N Block Girls Hostel</h3>
+            <p>Girls residential hostel.</p>
+            <button onclick="navigate('SRM N Block Girls Hostel Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="boys hostel">
+            <div class="place-icon">🏡</div>
+            <h3>Boys Hostel</h3>
+            <p>Student residential facilities.</p>
+            <button onclick="navigate('SRM Boys Hostel Kattankulathur')">Get Directions</button>
+        </div>
+
+        <div class="place-card" data-name="java canteen">
+            <div class="place-icon">🍔</div>
+            <h3>Java Canteen</h3>
+            <p>Food and refreshments for students.</p>
+            <button onclick="navigate('Java Canteen SRM Kattankulathur')">Get Directions</button>
+        </div>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+        No campus locations found!
+    </div>
+
+    <div class="map-section">
+        <h2>🗺️ SRM Campus Map</h2>
+        <p style="margin-bottom:15px;color:#777;">
+            Explore SRM Kattankulathur using the interactive map.
+        </p>
+
+        <iframe
+            src="https://maps.google.com/maps?q=SRM%20Institute%20of%20Science%20and%20Technology%20Kattankulathur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+    <p>SRM SMART CAMPUS NAVIGATOR</p>
+    <p>Designed for SRMIST KTR Students</p>
+    <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+function navigate(place) {
+    const url = "https://www.google.com/maps/search/?api=1&query="
+        + encodeURIComponent(place);
+
+    window.open(url, "_blank");
+}
+
+function searchPlaces() {
+    const input = document.getElementById("search")
+        .value.toLowerCase();
+
+    const cards = document.querySelectorAll(".place-card");
+    let visible = 0;
+
+    cards.forEach(card => {
+        const name = card.getAttribute("data-name");
+
+        if (name.includes(input)) {
+            card.style.display = "block";
+            visible++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    document.getElementById("noResults").style.display =
+        visible === 0 ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
