@@ -1,0 +1,240 @@
+
+/* =====================================
+   SRM SMART CAMPUS NAVIGATOR
+   Main Stylesheet
+===================================== */
+
+/* Global Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f4ff;
+    color: #25264b;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(120deg, #25266d, #6554c0);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Main Container */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+/* Welcome Section */
+
+.welcome {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.welcome h2 {
+    color: #4942a0;
+    margin-bottom: 8px;
+}
+
+/* Search Box */
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #dedcf7;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 15px;
+    outline: none;
+    background: white;
+    transition: 0.3s;
+}
+
+.search-box:focus {
+    border-color: #554bc0;
+    box-shadow: 0 0 0 3px #554bc020;
+}
+
+/* Section Titles */
+
+.section-title {
+    margin: 20px 0 15px;
+    color: #343477;
+}
+
+/* Campus Places Grid */
+
+.places {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 18px;
+}
+
+/* Place Cards */
+
+.place-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px #00000010;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px #00000018;
+}
+
+.place-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.place-card h3 {
+    margin-bottom: 8px;
+    color: #46409b;
+}
+
+.place-card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+
+button {
+    background: #554bc0;
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #37318e;
+}
+
+button:focus-visible {
+    outline: 3px solid #25266d;
+    outline-offset: 3px;
+}
+
+/* No Search Results */
+
+.no-results {
+    display: none;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    background: white;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* Map Section */
+
+.map-section {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.map-section h2 {
+    margin-bottom: 12px;
+    color: #46409b;
+}
+
+.map-description {
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+footer {
+    background: #25266d;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 35px;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* Mobile Responsive Design */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 23px 12px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    header p {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .places {
+        grid-template-columns: 1fr;
+    }
+
+    .map-section iframe {
+        height: 300px;
+    }
+
+    .welcome {
+        padding: 18px;
+    }
+}

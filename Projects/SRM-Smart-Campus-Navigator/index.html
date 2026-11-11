@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SRM Smart Campus Navigator</title>
+
+    <meta name="description" content="Explore SRM Kattankulathur campus locations, search important facilities and get directions using the SRM Smart Campus Navigator.">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🎓 SRM SMART CAMPUS NAVIGATOR</h1>
+        <p>SRM Institute of Science and Technology | Kattankulathur</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h2>Welcome to SRM Campus!</h2>
+            <p>
+                Find important locations and navigate around
+                the SRM KTR campus easily.
+            </p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <input
+                type="text"
+                id="search"
+                class="search-box"
+                placeholder="🔍 Search campus locations..."
+                autocomplete="off"
+                aria-label="Search campus locations"
+            >
+        </section>
+
+        <!-- Campus Locations -->
+        <section>
+            <h2 class="section-title">📍 Campus Locations</h2>
+
+            <div class="places" id="places">
+
+                <div class="place-card" data-name="arch gate">
+                    <div class="place-icon">🚪</div>
+                    <h3>SRM Arch Gate</h3>
+                    <p>Main entrance of SRM University.</p>
+                    <button data-place="SRM Arch Gate Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="university library">
+                    <div class="place-icon">📚</div>
+                    <h3>University Library</h3>
+                    <p>Central library for students and research.</p>
+                    <button data-place="SRM University Library Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="tech park 1">
+                    <div class="place-icon">🏢</div>
+                    <h3>Tech Park 1</h3>
+                    <p>Academic and technology facilities.</p>
+                    <button data-place="SRM Tech Park 1 Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="tech park 2">
+                    <div class="place-icon">💻</div>
+                    <h3>Tech Park 2</h3>
+                    <p>Technology and academic building.</p>
+                    <button data-place="SRM Tech Park 2 Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="global hospital">
+                    <div class="place-icon">🏥</div>
+                    <h3>SRM Global Hospital</h3>
+                    <p>Healthcare and medical facilities.</p>
+                    <button data-place="SRM Global Hospital Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="n block girls hostel">
+                    <div class="place-icon">🏠</div>
+                    <h3>N Block Girls Hostel</h3>
+                    <p>Girls residential hostel.</p>
+                    <button data-place="SRM N Block Girls Hostel Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="boys hostel">
+                    <div class="place-icon">🏡</div>
+                    <h3>Boys Hostel</h3>
+                    <p>Student residential facilities.</p>
+                    <button data-place="SRM Boys Hostel Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+                <div class="place-card" data-name="java canteen">
+                    <div class="place-icon">🍔</div>
+                    <h3>Java Canteen</h3>
+                    <p>Food and refreshments for students.</p>
+                    <button data-place="Java Canteen SRM Kattankulathur">
+                        Get Directions
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="no-results" id="noResults">
+                No campus locations found!
+            </div>
+
+        </section>
+
+        <!-- Campus Map -->
+        <section class="map-section">
+
+            <h2>🗺️ SRM Campus Map</h2>
+
+            <p class="map-description">
+                Explore SRM Kattankulathur using the interactive map.
+            </p>
+
+            <iframe
+                src="https://maps.google.com/maps?q=SRM%20Institute%20of%20Science%20and%20Technology%20Kattankulathur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="SRM Kattankulathur Campus Map">
+            </iframe>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>SRM SMART CAMPUS NAVIGATOR</p>
+        <p>Designed for SRMIST KTR Students</p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
